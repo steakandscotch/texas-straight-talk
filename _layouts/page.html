@@ -6,18 +6,18 @@ layout: default
     <div class="span9">
       {% if page.title %}<h1>{{ page.title }}</h1>{% endif %}
       {% if page.author %}<h2>{{ page.author }}</h2>{% endif %}
-      {% if page.date %}<h3>{{ page.date }}</h3>{% endif %}
+      {% if page.date %}<h3>{{ page.date | date: "%B %e, %Y" }}</h3>{% endif %}
       {{ content }}
     </div>
     <div class="span3">
-      <h1>Related Posts</h1>
-      <nav id="related">
-        <ul>
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="nav-header">Related Articles</li>
           {% for related in site.related_posts limit:10 %}
           <li><a href="{{ date.url }}">{{ related.title }}</a></li>
           {% endfor %}
         </ul>
-      </nav>
+      </div>
     </div>
   </div>
 </div>
