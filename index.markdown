@@ -4,5 +4,5 @@ layout: default
 ---
 
 {% for post in site.posts %}
-- [{{ post.url }}]({{ post.title }})
+- [{{ post.title }}](/texas-straight-talk{{ post.url }}) -- {{ post.date | date: "%d %B %Y" }}
 {% endfor %}
