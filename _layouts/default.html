@@ -18,7 +18,7 @@
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link href="/texas-straight-talk/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
       body {
         padding-top: 60px;
@@ -28,7 +28,7 @@
         padding: 9px 0;
       }
     </style>
-    <link href="/texas-straight-talk/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
 
   </head>
   <body>
@@ -40,10 +40,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="/texas-straight-talk/">Texas Straight Talk</a>
+          <a class="brand" href="{{ site.baseurl }}">Texas Straight Talk</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active"><a href="/texas-straight-talk/">All Posts</a></li>
+              <li><a href="{{ site.baseurl }}">All Posts</a></li>
               <li><a href="https://github.com/steakandscotch/texas-straight-talk" target="_blank">GitHub Source</a></li>
             </ul>
           </div>
@@ -55,6 +55,6 @@
       {{ content }}
     </div>
   
-    <script type="text/javascript" src="/texas-straight-talk/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site.baseurl }}/bootstrap/js/bootstrap.min.js"></script>
   </body>
 </html>
