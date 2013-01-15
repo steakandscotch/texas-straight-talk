@@ -1,4 +1,4 @@
 permalink: pretty
 baseurl: http://steakandscot.ch/texas-straight-talk/
-destination: /srv/http/steakandscot.ch/htdocs/texas-straight-talk
+destination: /srv/http/steakandscot.ch/htdocs/texas-straight-talk/
 markdown: kramdown
