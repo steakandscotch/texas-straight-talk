@@ -1,12 +1,84 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>{{ page.title }}</title>
+    {% if page.author %}
+      <meta name="author" content="{{ page.author }}">
+    {% endif %}
+    <link rel="alternate"
+          title="Ron Paul's Texas Straight Talk"
+          type="application/atom+xml"
+          href="{{ site.baseurl}}atom.xml" />
+    <style type="text/css">
+      /* narrow, small font */
+      body {
+        width: 72ex;
+        font-size: 0.8em;
+        font-family: Helvetica, sans-serif;
+        margin-top: 2em;
+        margin-left: 2em;
+      }
 
-<article class="page">
-<header>
-<h1>{{ page.title }}</h1>
-<h2>{{ page.author }}</h2>
-<h3>{{ page.date }}</h3>
-</header>
-{{ content }}
-</article>
+      /* new html 5 elements are not displayed as block, by default */
+      #h, #m, #f { display: block; }
+
+      /* header: white on black */
+      #h h1 {
+        color: #fff;
+        font-size: 1.5em;
+        background-color: #000;
+        display: inline-block;
+        padding: 0.25em;
+      }
+
+      /* page headings */
+      #m h1 { font-size: 1.5em; }
+      #m h2 { font-size: 1.25em; }
+      #m h3 { font-size: 1em; }
+      /* #m h1, #m h2, #m h3 { text-align: center; }*/
+
+      /* inline navigation */
+      #n, #n ul li { display: inline-block; }
+      #n ul { padding-left: 2em; }
+      #n li+li:before { content: "\2003\2022\2003"; }
+
+      /* lighter, smaller font color for the footer */
+      #f p { color: #777; font-size: 0.8em; }
+    </style>
+  </head>
+  <body>
+    <header id="h">
+      <h1>Texas Straight Talk</h1>
+      <nav id="n">
+        <ul>
+          <li><a href="{{ site.baseurl }}">Articles</a></li>
+          <li><a href="{{ site.baseurl }}colophon">Colophon</a></li>
+          <li><a href="https://github.com/steakandscotch/texas-straight-talk">Source</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="m">
+      {% if page.title %}
+        <header>
+          {% if page.title %}
+            <h1>{{ page.title }}</h1>
+          {% endif %}
+          {% if page.author %}
+            <h2>{{ page.author }}</h2>
+          {% endif %}
+          {% if page.date %}
+            <h3>{{ page.date | date: "%B %d, %Y" }}</h3>
+          {% endif %}
+        </header>
+      {% endif %}
+
+      {{ content }}
+    </section>
+    <footer id="f">
+      <p>This is not an offical page &mdash; it is an incomplete collection of
+      Dr.  Paul's weekly column that was previously hosted on his Congressional
+      web page.</p>
+    </footer>
+  </body>
+</html>

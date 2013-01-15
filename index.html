@@ -1,0 +1,23 @@
+---
+title: Ron Paul's Texas Straight Talk
+layout: page
+---
+
+<style type="text/css">
+  #toc { width: 100%; }
+  #toc td { white-space: nowrap; vertical-align: top; }
+  #toc td.date { text-align: right; font-size: 0.8em; }
+</style>
+
+<table id="toc">
+{% for post in site.posts %}
+  <tr>
+    <td class="title">
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </td>
+    <td class="date" width="100%">
+      {{ post.date | date: "%b %d, %Y" }}
+    </td>
+  </tr>
+{% endfor %}
+</table>
