@@ -38,112 +38,24 @@
       #m h3 { font-size: 1em; }
       /* #m h1, #m h2, #m h3 { text-align: center; }*/
 
-      /* inline navigation */
-      #n, #n ul li { display: inline-block; }
-      #n ul { padding-left: 2em; }
-      #n li+li:before { content: "\2003\2022\2003"; }
-
-      /* lighter, smaller font color for the footer */
-      #f p { color: #777; font-size: 0.8em; }
-
-      @media print {
-        * { 
-          background: transparent !important;
-          color: black !important;
-          box-shadow:none !important;
-          text-shadow: none !important;
-          filter:none !important;
-          -ms-filter: none !important; 
-        } 
-      
-        a,
-        a:visited {
-          text-decoration: underline; 
-        }
-      
-        a[href]:after { 
-          content: " (" attr(href) ")"; 
-        }
-      
-        abbr[title]:after { 
-          content: " (" attr(title) ")"; 
-        }
-      
-        a:after,
-        a[href^="javascript:"]:after,
-        a[href^="#"]:after { 
-          content: ""; 
-        }
-      
-        pre,
-        blockquote { 
-          border: 1px solid #999;
-          page-break-inside: avoid; 
-        }
-      
-        thead { 
-          display: table-header-group;
-        }
-      
-        tr,
-        img { 
-          page-break-inside: avoid; 
-        }
-      
-        img { 
-          max-width: 100% !important; 
-        }
-      
-        @page { 
-          margin: 1in;
-        }
-      
-        p,
-        h2,
-        h3 {
-          orphans: 3;
-          widows: 3; 
-        }
-      
-        h2,
-        h3 {
-          page-break-after: avoid; 
-        }
-      
-        footer#f, 
-        header#h, 
-        nav#n { 
-          display: none;
-        }
-      
-        html body { 
-          font-size: 16px;
-          line-height: 1.231;
-          font-family: 'Times New Roman', serif;
-          width: 70ex;
-          margin: 2em auto 2em auto;
-          padding: 0; 
-        }
-      
-        nav#h h1 { 
-          font-size: 200%;
-          font-weight: bold;
-          text-align: center;
-          display: block; 
-        }
+      a:hover {
+        color: #ff0000;
+        -webkit-transition:color 0.125s linear;  
+        -moz-transition:color 0.125s linear;  
+        -o-transition:color 0.125s linear;  
+        transition:color 0.125s linear; 
       }
+
+      
+      {% include navigation.css %}
+      {% include footer.css %}
+      {% include print.css %}
     </style>
   </head>
   <body>
     <header id="h">
       <h1>Texas Straight Talk</h1>
-      <nav id="n">
-        <ul>
-          <li><a href="{{ site.baseurl }}">Articles</a></li>
-          <li><a href="{{ site.baseurl }}colophon">Colophon</a></li>
-          <li><a href="https://github.com/steakandscotch/texas-straight-talk">Source</a></li>
-        </ul>
-      </nav>
+      {% include navigation.html %}
     </header>
     <section id="m">
       {% if page.title %}

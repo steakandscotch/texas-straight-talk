@@ -1,0 +1,5 @@
+/* inline navigation */
+#n, #n ul li { display: inline-block; }
+#n ul { padding-left: 2em; }
+#n li+li:before { content: "\2003\2022\2003"; }
+
